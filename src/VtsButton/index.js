@@ -1,28 +1,32 @@
-import React, { Component } from "react";
-import classNames from "classnames";
+import React, { Component } from 'react'
+import classNames from 'classnames'
+import { result } from 'lodash'
 
 export default class VtsButton extends Component {
+  onClick = e => this.props.onClick ? this.props.onClick(e) : _.noop
+
   render() {
     return (
-      <div>
+      <div className="vts-button">
         <button
-          class="button -fc"
           name={this.props.name}
-          ng-class={classNames({
+          className={classNames({
+            button: true,
+            '-fc': true,
             [`-type-${this.props.type}`]: this.props.type,
             [`-size-${this.props.size}`]: this.props.size,
-            "is-disabled": this.props.disabled,
-            "button--icon-only": !!(
-              this.props.textSlotName === undefined && this.props.icon
+            'is-disabled': this.props.disabled,
+            'button--icon-only': !!(
+              !this.props.children && this.props.icon
             )
           })}
-          onClick={e => this.props.handleClick(e)}
+          onClick={this.onClick}
           type={this.props.buttonType}
         >
           {this.props.icon ? <i className={this.props.icon} /> : null}
-          <div className="button-text">{this.props.children}</div>
+          <span className="button-text">{this.props.children}</span>
         </button>
       </div>
-    );
+    )
   }
 }

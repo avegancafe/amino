@@ -1,26 +1,12 @@
-import React from 'react';
-
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-
-import { Button, Welcome } from '@storybook/react/demo';
+import centered from '@storybook/addon-centered'
+import { addDecorator } from '@storybook/react'
 
 import '../src/stylesheets/horse-style.css'
 
-import VtsButton from '../src/VtsButton'
+addDecorator(centered)
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+function requireAll(requireContext) {
+  return requireContext.keys().map(requireContext);
+}
 
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
-
-storiesOf('VtsButton', module)
-  .add('with text', () => <VtsButton>Hello, world!</VtsButton>)
+requireAll(require.context("..", true, /_story\.jsx?$/));

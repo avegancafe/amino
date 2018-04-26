@@ -6115,7 +6115,8 @@ vts-button {
     .vts-button .button.button--icon-only,
     vts-button .button.button--icon-only {
       min-width: 30px;
-      padding: 0; }
+      padding: 0;
+      padding-left: 5px; }
       .vts-button .button.button--icon-only [class*="icon-"],
       vts-button .button.button--icon-only [class*="icon-"] {
         color: #737373;

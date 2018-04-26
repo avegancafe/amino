@@ -39,6 +39,13 @@
     react-inspector "^2.3.0"
     uuid "^3.2.1"
 
+"@storybook/addon-centered@^3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-3.4.2.tgz#5d0bd9e14b5394daa957b59a163b21601a53b0a4"
+  dependencies:
+    babel-runtime "^6.26.0"
+    global "^4.3.2"
+
 "@storybook/addon-links@^4.0.0-alpha.3":
   version "4.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-4.0.0-alpha.3.tgz#1dd628122ee2c8587c1491484578d2e2c2ab69f4"
@@ -3535,7 +3542,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.14.0, lodash@^4.17.0, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0:
+lodash@^4.14.0, lodash@^4.17.0, lodash@^4.17.10, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
