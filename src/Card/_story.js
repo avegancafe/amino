@@ -30,7 +30,7 @@ storiesOf('Cards', module)
       </CardHeader>
       <CardContent>
         <div>Maybe this is a deal profile thing.</div>
-        <div style={{ marginBottom: 10 }}>Maybe it's a button</div>
+        <div className=" u-m-bottom">Maybe it's a button</div>
         <VtsButton onClick={noop}>Button!</VtsButton>
       </CardContent>
     </Card>

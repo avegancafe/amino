@@ -9,28 +9,27 @@ import VtsInput from './'
 let inputValue = ''
 
 const inputInfo = withInfo('Input with potential validations')
-action('input-changed')
 
 storiesOf('VtsInput', module)
   .addDecorator((story, context) => inputInfo(story)(context))
-  .add('basic', () => (
+  .addWithJSX('basic', () => (
     <VtsInput onChange={action('input-changed')} value={inputValue} />
   ))
-  .add('with a label', () => (
+  .addWithJSX('with a label', () => (
     <VtsInput
       onChange={action('input-changed')}
       value={inputValue}
       label="mo"
     />
   ))
-  .add('with a placeholder', () => (
+  .addWithJSX('with a placeholder', () => (
     <VtsInput
       onChange={action('input-changed')}
       value={inputValue}
       placeholder="Search for a property..."
     />
   ))
-  .add('with an icon', () => (
+  .addWithJSX('with an icon', () => (
     <VtsInput
       onChange={action('input-changed')}
       value={inputValue}

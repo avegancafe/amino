@@ -81,7 +81,7 @@ class VtsInput extends Component {
 
 VtsInput.propTypes = {
   /** Whether or not this field is required to be filled out */
-  required: PropTypes.string,
+  required: PropTypes.bool,
   /** What should happen when the value is changedd */
   onChange: PropTypes.func.isRequired,
   /** if this input is changed */

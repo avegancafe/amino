@@ -4,37 +4,36 @@ import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
 import { action } from '@storybook/addon-actions'
+import noop from 'lodash/noop'
 
 import VtsButton from './'
 const buttonInfo = withInfo('Button with text')
 
-action('button-click')
-
 storiesOf('VtsButton', module)
   .addDecorator((story, context) => buttonInfo(story)(context))
-  .add('with text', () => (
-    <VtsButton onClick={action('button-click')}>Hello, world!</VtsButton>
+  .addWithJSX('with text', () => (
+    <VtsButton onClick={action('button-click')}>Hello, VTS!</VtsButton>
   ))
-  .add('with an icon', () => (
-    <VtsButton icon="icon-plus-v2" onClick={action('button-click')} />
+  .addWithJSX('with an icon', () => (
+    <VtsButton icon="icon-plus-v2" onClick={noop} />
   ))
-  .add('with text and an icon', () => (
-    <VtsButton icon="icon-plus-v2" onClick={action('button-click')}>
-      Hello, world!
+  .addWithJSX('with text and an icon', () => (
+    <VtsButton icon="icon-plus-v2" onClick={noop}>
+      Hello, VTS!
     </VtsButton>
   ))
-  .add('small sized', () => (
-    <VtsButton size="sm" onClick={action('button-click')}>
+  .addWithJSX('small sized', () => (
+    <VtsButton size="sm" onClick={noop}>
       It's a button
     </VtsButton>
   ))
-  .add('medium sized', () => (
-    <VtsButton size="md" onClick={action('button-click')}>
+  .addWithJSX('medium sized', () => (
+    <VtsButton size="md" onClick={noop}>
       It's a button
     </VtsButton>
   ))
-  .add('large sized', () => (
-    <VtsButton size="lg" onClick={action('button-click')}>
+  .addWithJSX('large sized', () => (
+    <VtsButton size="lg" onClick={noop}>
       It's a button
     </VtsButton>
   ))

@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
@@ -6,12 +6,23 @@ import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
 
 import VtsSwitch from './'
-const switchInfo = withInfo('A switch that is on or off')
+class VtsSwitchWrapper extends Component {
+  constructor() {
+    super()
+    this.state = {
+      toggled: false
+    }
+  }
 
-action('toggle-switch')
+  toggle = e => {
+    this.setState({ toggled: !this.state.toggled })
+    action('toggle-switch')(e)
+  }
+
+  render() {
+    return <VtsSwitch value={this.state.toggled} onChange={this.toggle} />
+  }
+}
 
 storiesOf('VtsSwitch', module)
-  .addDecorator((story, context) => switchInfo(story)(context))
-  .add('basic', () => (
-    <VtsSwitch value={true} onChange={action('toggleSwitch')} />
-  ))
+  .add('basic', () => <VtsSwitchWrapper />)

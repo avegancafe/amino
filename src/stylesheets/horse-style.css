@@ -5504,6 +5504,7 @@ vts-tag,
     color: #ffffff; }
   vts-tag .tag-text,
   .tag .tag-text {
+    display: inline-block;
     font-size: 10px;
     font-weight: 400;
     text-transform: uppercase;
