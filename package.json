@@ -28,6 +28,6 @@
   "scripts": {
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3002",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs"
   }
 }

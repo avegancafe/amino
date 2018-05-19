@@ -1,6 +1,32 @@
 {
   "presets": [
-    "stage-2",
-    "react"
+    [
+      "babel-preset-env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", 'safari >= 7']
+        },
+        "modules": false
+      }
+    ],
+    "babel-preset-stage-2",
+    "babel-preset-react",
+    [
+      "babel-preset-minify",
+      {
+        "mangle": false
+      }
+    ]
+  ],
+  "plugins": [
+    "babel-plugin-transform-regenerator",
+    [
+      "babel-plugin-transform-runtime",
+      {
+        "helpers": true,
+        "polyfill": true,
+        "regenerator": true
+      }
+    ]
   ]
 }
