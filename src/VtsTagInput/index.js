@@ -116,6 +116,7 @@ class VtsTagInput extends Component {
           ))}
           <ContentEditable
             ref="inputField"
+            html=""
             onBlur={() => this.handleInputBlur()}
             className="tag-input-field"
             onKeyDown={e => this.handleKeyDown(e)}
