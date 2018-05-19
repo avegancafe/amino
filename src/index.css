@@ -1,0 +1,626 @@
+@charset "UTF-8";
+
+html {
+  box-sizing: border-box;
+  font-family: serif;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+  font-family: sans-serif;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  color: #191919;
+  font-size: 14px;
+  height: 100%;
+  font-family: 'Roboto', 'Verdana', 'Geneva', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  direction: ltr;
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('stylesheets/glacial-indifference/glacial-indifference-regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('stylesheets/glacial-indifference/glacial-indifference-bold.woff')
+    format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('stylesheets/lato/lato-regular.woff') format('woff'),
+    url('stylesheets/lato/lato-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('stylesheets/lato/lato-light.woff') format('woff'),
+    url('stylesheets/lato/lato-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Harriet';
+  src: url('stylesheets/harriet/harriet-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('stylesheets/roboto/roboto-thin-webfont.woff2') format('woff2'),
+    url('stylesheets/roboto/roboto-thin-webfont.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('stylesheets/roboto/roboto-light-webfont.woff2') format('woff2'),
+    url('stylesheets/roboto/roboto-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('stylesheets/roboto/roboto-regular-webfont.woff2') format('woff2'),
+    url('stylesheets/roboto/roboto-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('stylesheets/roboto/roboto-bold-webfont.woff2') format('woff2'),
+    url('stylesheets/roboto/roboto-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('stylesheets/roboto/roboto-black-webfont.woff2') format('woff2'),
+    url('stylesheets/roboto/roboto-black-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('stylesheets/roboto/roboto-medium-webfont.woff2') format('woff2'),
+    url('stylesheets/roboto/roboto-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinAlternate';
+  src: url('stylesheets/dinalternate/dinalternate-bold.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vts-icons';
+  src: url('stylesheets/vts-icons/vts-thin.woff') format('woff'),
+    url('stylesheets/vts-icons/vts-thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vts-icons';
+  src: url('stylesheets/vts-icons/vts-regular.woff') format('woff'),
+    url('stylesheets/vts-icons/vts-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'vts-icons';
+  src: url('stylesheets/vts-icons/vts-bold.woff') format('woff'),
+    url('stylesheets/vts-icons/vts-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.vts-modal .modal-close::before,
+.navbar-logo::before,
+.portfolio-navigation .vts-logo::before,
+.signIn-page .wrapper .container .logo::before,
+[class^='icon-']::before,
+[class*=' icon-']::before {
+  color: #737373;
+  font-weight: 200;
+  font-family: 'vts-icons' !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-activity::before {
+  content: '\ef09';
+}
+
+.icon-back-arrow::before {
+  content: '\ef1c';
+}
+
+.icon-bar-graph::before {
+  content: '\ef10';
+}
+
+.icon-building-list::before {
+  content: '\ef4e';
+}
+
+.icon-building-small::before {
+  content: '\ef63';
+}
+
+.icon-building::before {
+  content: '\eefc';
+}
+
+.icon-calendar::before {
+  content: '\eeed';
+}
+
+.icon-camera::before {
+  content: '\eee5';
+}
+
+.icon-check::before {
+  content: '\ef0d';
+}
+
+.icon-clock::before {
+  content: '\ef00';
+}
+
+.icon-close-v1::before,
+vts-modal .modal-close::before {
+  content: '\eef4';
+}
+
+.icon-close-v2::before {
+  content: '\eef5';
+}
+
+.icon-collapse::before {
+  content: '\ef15';
+}
+
+.icon-comment::before {
+  content: '\eeee';
+}
+
+.icon-connect::before {
+  content: '\ef5a';
+}
+
+.icon-contact-info::before {
+  content: '\eee3';
+}
+
+.icon-deal::before {
+  content: '\eeeb';
+}
+
+.icon-doc-filled::before {
+  content: '\ef25';
+}
+
+.icon-doc-outlined::before {
+  content: '\ef22';
+}
+
+.icon-dots::before {
+  content: '\ef29';
+}
+
+.icon-download::before {
+  content: '\ef1e';
+}
+
+.icon-duplicate::before {
+  content: '\ef36';
+}
+
+.icon-ellipsis::before {
+  content: '\ef20';
+}
+
+.icon-encumbrance::before {
+  content: '\ef62';
+}
+
+.icon-exclamation-sign::before {
+  content: '\ef4d';
+}
+
+.icon-exclamation::before {
+  content: '\ef55';
+}
+
+.icon-expand::before {
+  content: '\ef16';
+}
+
+.icon-file-v1::before {
+  content: '\ef28';
+}
+
+.icon-file-v2::before {
+  content: '\eee9';
+}
+
+.icon-filter::before {
+  content: '\ef0b';
+}
+
+.icon-financial::before {
+  content: '\eeec';
+}
+
+.icon-flame::before {
+  content: '\ef59';
+}
+
+.icon-floorplan::before {
+  content: '\eee7';
+}
+
+.icon-hide::before {
+  content: '\ef50';
+}
+
+.icon-home::before {
+  content: '\ef06';
+}
+
+.icon-hourglass::before {
+  content: '\ef4c';
+}
+
+.icon-industrial::before {
+  content: '\ef47';
+}
+
+.icon-info::before {
+  content: '\eee4';
+}
+
+.icon-information::before {
+  content: '\eeea';
+}
+
+.icon-integrate::before {
+  content: '\ef0c';
+}
+
+.icon-key::before {
+  content: '\eefb';
+}
+
+.icon-left-arrow::before {
+  content: '\ef1c';
+}
+
+.icon-line-graph::before {
+  content: '\ef0f';
+}
+
+.icon-link-broken::before {
+  content: '\ef3e';
+}
+
+.icon-link::before {
+  content: '\ef2a';
+}
+
+.icon-list-expanded::before {
+  content: '\ef12';
+}
+
+.icon-location::before {
+  content: '\eefe';
+}
+
+.icon-lock::before {
+  content: '\eef9';
+}
+
+.icon-log::before {
+  content: '\eef2';
+}
+
+.icon-mag-plus::before {
+  content: '\eef1';
+}
+
+.icon-mag::before {
+  content: '\eef0';
+}
+
+.icon-mail::before {
+  content: '\ef03';
+}
+
+.icon-menu-v1-collapsed::before {
+  content: '\ef11';
+}
+
+.icon-menu-vertical::before {
+  content: '\ef13';
+}
+
+.icon-message::before {
+  content: '\ef57';
+}
+
+.icon-mobile::before {
+  content: '\eeff';
+}
+
+.icon-move-v2::before {
+  content: '\ef1f';
+}
+
+.icon-move::before {
+  content: '\ef17';
+}
+
+.icon-nav-down::before {
+  content: '\ef1b';
+}
+
+.icon-nav-left::before {
+  content: '\ef1a';
+}
+
+.icon-nav-right::before {
+  content: '\ef19';
+}
+
+.icon-nav-up::before {
+  content: '\ef18';
+}
+
+.icon-note::before {
+  content: '\eee8';
+}
+
+.icon-notification::before {
+  content: '\ef02';
+}
+
+.icon-officepark::before {
+  content: '\eefd';
+}
+
+.icon-paperclip::before {
+  content: '\ef0e';
+}
+
+.icon-pdf-filled::before {
+  content: '\ef26';
+}
+
+.icon-pdf-outlined::before {
+  content: '\ef23';
+}
+
+.icon-pencil::before {
+  content: '\eef7';
+}
+
+.icon-picture::before {
+  content: '\eee6';
+}
+
+.icon-play::before {
+  content: '\ef04';
+}
+
+.icon-plus-v2-1::before {
+  content: '\eef3';
+}
+
+.icon-plus-v2::before {
+  content: '\eef2';
+}
+
+.icon-point::before {
+  content: '\ef53';
+}
+
+.icon-portfolio::before {
+  content: '\ef08';
+}
+
+.icon-preview::before {
+  content: '\eeef';
+}
+
+.icon-public-link::before {
+  content: '\ef37';
+}
+
+.icon-question::before {
+  content: '\ef56';
+}
+
+.icon-reminder::before {
+  content: '\ef01';
+}
+
+.icon-reset::before {
+  content: '\ef66';
+}
+
+.icon-retail::before {
+  content: '\ef46';
+}
+
+.icon-ribbon-filled::before {
+  content: '\ef65';
+}
+
+.icon-ribbon::before {
+  content: '\ef64';
+}
+
+.icon-right-arrow::before {
+  content: '\ef1c';
+}
+
+.icon-set-up::before {
+  content: '\eef8';
+}
+
+.icon-share::before {
+  content: '\ef05';
+}
+
+.icon-sort-down::before {
+  content: '\ef43';
+}
+
+.icon-sort-up::before {
+  content: '\ef42';
+}
+
+.icon-spaces::before {
+  content: '\ef2f';
+}
+
+.icon-stack::before {
+  content: '\ef0a';
+}
+
+.icon-stage::before {
+  content: '\ef35';
+}
+
+.icon-star-filled::before {
+  content: '\ef5d';
+}
+
+.icon-star-outlined::before {
+  content: '\ef5e';
+}
+
+.icon-tasks::before {
+  content: '\ef4f';
+}
+
+.icon-trash::before {
+  content: '\eef6';
+}
+
+.icon-unlock::before {
+  content: '\eefa';
+}
+
+.icon-upload::before {
+  content: '\ef1d';
+}
+
+.icon-user-plus::before {
+  content: '\eee1';
+}
+
+.icon-user::before {
+  content: '\eee0';
+}
+
+.icon-users::before {
+  content: '\eee2';
+}
+
+.icon-vts-logo-no-text::before,
+.navbar-logo::before {
+  content: '\ef49';
+}
+
+.icon-vts-logo-side-text::before,
+.portfolio-navigation .vts-logo::before,
+.signIn-page .wrapper .container .logo::before {
+  content: '\ef67';
+}
+
+.icon-vts-logo::before {
+  content: '\ef21';
+}
+
+.icon-xls-filled::before {
+  content: '\ef27';
+}
+
+.icon-xls-outlined::before {
+  content: '\ef24';
+}
+
+.closedatepicker-icon {
+  cursor: pointer;
+  color: #737373;
+  font-size: 10px;
+  position: relative;
+  right: 5px;
+  font-weight: 700;
+}
+
+.icon-circle::before {
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+}
+
+.icon-blue::before {
+  color: #5528ff;
+}

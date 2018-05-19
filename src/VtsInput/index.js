@@ -3,6 +3,8 @@ import classNames from 'classnames'
 import { get } from 'lodash'
 import PropTypes from 'prop-types'
 
+import './VtsInput.css'
+
 class VtsInput extends Component {
   constructor() {
     super()

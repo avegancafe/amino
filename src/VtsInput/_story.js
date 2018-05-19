@@ -1,8 +1,8 @@
 import React from 'react'
+import noop from 'lodash/noop'
 
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import { action } from '@storybook/addon-actions'
 
 import VtsInput from './'
 
@@ -12,27 +12,17 @@ const inputInfo = withInfo('Input with potential validations')
 
 storiesOf('VtsInput', module)
   .addDecorator((story, context) => inputInfo(story)(context))
-  .addWithJSX('basic', () => (
-    <VtsInput onChange={action('input-changed')} value={inputValue} />
+  .add('basic', () => <VtsInput onChange={noop} value={inputValue} />)
+  .add('with a label', () => (
+    <VtsInput onChange={noop} value={inputValue} label="mo" />
   ))
-  .addWithJSX('with a label', () => (
+  .add('with a placeholder', () => (
     <VtsInput
-      onChange={action('input-changed')}
-      value={inputValue}
-      label="mo"
-    />
-  ))
-  .addWithJSX('with a placeholder', () => (
-    <VtsInput
-      onChange={action('input-changed')}
+      onChange={noop}
       value={inputValue}
       placeholder="Search for a property..."
     />
   ))
-  .addWithJSX('with an icon', () => (
-    <VtsInput
-      onChange={action('input-changed')}
-      value={inputValue}
-      icon="icon-mag"
-    />
+  .add('with an icon', () => (
+    <VtsInput onChange={noop} value={inputValue} icon="icon-mag" />
   ))

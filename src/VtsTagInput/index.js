@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
+import Style from './VtsTagInput.css'
 import VtsTag from './VtsTag'
 import * as KeyboardConstants from '../keyboardConstants'
 import at from 'lodash/at'
@@ -106,7 +107,9 @@ class VtsTagInput extends Component {
             <VtsTag
               onRemove={() => this.handleRemoveTag(i)}
               key={`${tag}${i}`}
-              isBeingRemoved={ this.state.prepTagForRemoval && (i == this.props.tags.length - 1) }
+              isBeingRemoved={
+                this.state.prepTagForRemoval && i == this.props.tags.length - 1
+              }
               disabled={this.props.disabled}>
               {tag}
             </VtsTag>

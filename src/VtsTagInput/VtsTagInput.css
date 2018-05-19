@@ -1,0 +1,67 @@
+vts-tag-input,
+vts-autocomplete-tag-input,
+.tag-input {
+  cursor: text;
+}
+
+vts-tag-input .form-control,
+vts-tag-input .autocomplete--revised.dropdown,
+vts-autocomplete-tag-input .form-control,
+vts-autocomplete-tag-input .autocomplete--revised.dropdown,
+.tag-input .form-control,
+.tag-input .autocomplete--revised.dropdown {
+  padding-bottom: 0;
+}
+
+vts-tag-input .tag-input-field,
+vts-autocomplete-tag-input .tag-input-field,
+.tag-input .tag-input-field {
+  display: inline-block;
+  outline: 0;
+  min-width: 1px;
+}
+
+vts-tag,
+.tag {
+  display: inline-block;
+  background: #e5e5e5;
+  padding: 1px 8px 4px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  margin-right: 5px;
+  color: #a6a6a6;
+}
+
+vts-tag.is-being-removed,
+.tag.is-being-removed {
+  background: #ff4949;
+  color: #ffffff;
+}
+
+vts-tag .tag-text,
+.tag .tag-text {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+vts-tag .tag-remove,
+.tag .tag-remove {
+  display: inline-block;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: color 200ms ease;
+}
+
+vts-tag .tag-remove:hover,
+.tag .tag-remove:hover {
+  color: #8c82ff;
+}
+
+vts-tag .tag-remove.is-disabled,
+.tag .tag-remove.is-disabled {
+  cursor: not-allowed;
+}

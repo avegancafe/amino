@@ -1,0 +1,139 @@
+.form-control-container {
+  position: relative;
+  display: block;
+}
+
+.form-control {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  color: #191919;
+  padding: 4px 10px;
+  border-radius: 2px;
+  width: 100%;
+  position: relative;
+  min-height: 32px;
+}
+
+.form-control.is-invalid {
+  border-color: #ff4949;
+}
+
+.form-control.is-invalid + .form-messages {
+  color: #ff4949;
+}
+
+.form-control.is-required + .form-messages,
+.form-control.is-required {
+  border-color: #ff9e00;
+}
+
+.form-control:focus,
+.form-control.is-focused {
+  outline: none;
+  border-color: #5528ff;
+}
+
+.form-control.is-filterable {
+  cursor: text;
+}
+
+.form-control.is-disabled {
+  background-color: #f7f7f7;
+  cursor: not-allowed;
+}
+
+.form-control.is-disabled input {
+  background-color: #f7f7f7;
+  pointer-events: none;
+  color: #cccccc;
+}
+
+.form-control .form-icon,
+.form-control .form-label {
+  font-size: 14px;
+  color: #a6a6a6;
+  position: absolute;
+  right: 10px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.form-control .form-icon ~ input[type='text'],
+.form-control .form-label ~ input[type='text'] {
+  width: calc(100% - 25px);
+}
+
+.form-control .form-icon {
+  transition: none 0.3s ease-in-out;
+  transition-property: transform, margin;
+}
+
+.form-control .form-icon .line {
+  width: 1px;
+  height: 10px;
+  background-color: #737373;
+}
+
+.form-control .form-icon--first {
+  left: 10px;
+  right: 100%;
+}
+
+.form-control .form-icon--first ~ input[type='text'] {
+  margin-left: 25px;
+}
+
+.form-messages {
+  position: absolute;
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.form-messages.-type-required {
+  color: #ff9e00;
+}
+
+.form-messages.-type-invalid {
+  color: #ff4949;
+}
+
+.form-control input,
+.autocomplete--revised.dropdown input {
+  border: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.form-control input:focus,
+.autocomplete--revised.dropdown input:focus {
+  outline: none;
+}
+
+.form-control input[disabled],
+.autocomplete--revised.dropdown input[disabled] {
+  position: static;
+  opacity: 1;
+  height: auto;
+  padding: 1px;
+}
+
+.form-control input.ng-invalid.ng-dirty,
+.autocomplete--revised.dropdown input.ng-invalid.ng-dirty {
+  border: none;
+}
+
+.form-control input::-webkit-input-placeholder,
+.autocomplete--revised.dropdown input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+
+.form-control input:-ms-input-placeholder,
+.autocomplete--revised.dropdown input:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+.form-control input::placeholder,
+.autocomplete--revised.dropdown input::placeholder {
+  color: #cccccc;
+}

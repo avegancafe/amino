@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { action } from '@storybook/addon-actions'
+import noop from 'lodash/noop'
 import { storiesOf } from '@storybook/react'
 import cloneDeep from 'lodash/cloneDeep'
 import { withInfo } from '@storybook/addon-info'
@@ -21,13 +21,11 @@ class VtsTagInputWrapper extends Component {
   onSelect = tag => {
     const tags = this.state.tags
     this.setState({ tags: [...tags, tag] })
-    action('tag-addition')(tag)
   }
   onRemove = i => {
     const tags = cloneDeep(this.state.tags)
     tags.splice(i, 1)
     this.setState({ tags })
-    action('tag-removal')(i)
   }
 
   render() {

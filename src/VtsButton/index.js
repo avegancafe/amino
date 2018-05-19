@@ -3,6 +3,8 @@ import classNames from 'classnames'
 import { result } from 'lodash'
 import PropTypes from 'prop-types'
 
+import './VtsButton.css'
+
 class VtsButton extends Component {
   onClick = e => (this.props.onClick ? this.props.onClick(e) : _.noop)
 

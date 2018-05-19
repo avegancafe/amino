@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import './VtsSwitch.css'
+
 export default class VtsSwitch extends Component {
   constructor() {
     super()
