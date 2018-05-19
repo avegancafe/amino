@@ -1,6 +1,6 @@
 # Amino ⬛️
 
-> Building blocks for websites
+> Building blocks for websites and SPAs
 
 ## Installation
 
