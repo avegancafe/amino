@@ -15,8 +15,15 @@ import AlertCard from '../AlertCard'
 import VtsButton from '../VtsButton'
 
 const cardInfo = withInfo({
-  text: 'Card',
-  propTablesExclude: [VtsButton]
+  text: 'Card. All child content will be rendered in a card view.',
+  propTablesExclude: [
+    VtsButton,
+    Card,
+    CardContent,
+    CardHeader,
+    CardHeaderLabel,
+    CardHeaderOptions
+  ]
 })
 
 storiesOf('Cards', module)
