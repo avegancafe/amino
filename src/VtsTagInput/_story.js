@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 import noop from 'lodash/noop'
 import { storiesOf } from '@storybook/react'
@@ -8,11 +8,9 @@ import { withInfo } from '@storybook/addon-info'
 import VtsButton from '../VtsButton'
 import VtsTagInput from './'
 
-const tagInputInfo = withInfo('Input with tags')
-
 class VtsTagInputWrapper extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       tags: []
     }
@@ -30,17 +28,41 @@ class VtsTagInputWrapper extends Component {
 
   render() {
     return (
-      <div style={{ width: 300 }}>
-        <VtsTagInput
-          tags={this.state.tags}
-          onSelect={this.onSelect}
-          onRemove={this.onRemove}
-        />
-      </div>
+      <Fragment>
+        {this.props.children({
+          tags: this.state.tags,
+          onSelect: this.onSelect,
+          onRemove: this.onRemove
+        })}
+      </Fragment>
     )
   }
 }
 
+const tagInputInfo = withInfo({
+  text: 'Input with tags',
+  source: true,
+  propTables: [VtsTagInput],
+  propTablesExclude: [VtsTagInputWrapper]
+})
+
 storiesOf('VtsTagInput', module)
   .addDecorator((story, context) => tagInputInfo(story)(context))
-  .add('basic', () => <VtsTagInputWrapper />)
+  .addDecorator((story, context) => (
+    <VtsTagInputWrapper>
+      {props => {
+        Object.assign(context, props)
+        return <div style={{ width: '800px' }}>{story()}</div>
+      }}
+    </VtsTagInputWrapper>
+  ))
+  .add('basic', props => {
+    console.log(JSON.stringify(props))
+    return (
+      <VtsTagInput
+        tags={props.tags}
+        onSelect={props.onSelect}
+        onRemove={props.onRemove}
+      />
+    )
+  })
