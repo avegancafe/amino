@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import noop from 'lodash/noop'
 
 import Card, {
@@ -10,12 +11,16 @@ import Card, {
   CardHeaderOptions,
   CardLabel
 } from './'
-
 import AlertCard from '../AlertCard'
-
 import VtsButton from '../VtsButton'
 
+const cardInfo = withInfo({
+  text: 'Card',
+  propTablesExclude: [VtsButton]
+})
+
 storiesOf('Cards', module)
+  .addDecorator((story, context) => cardInfo(story)(context))
   .add('Standard card', () => (
     <Card>
       <CardHeader>
@@ -36,7 +41,7 @@ storiesOf('Cards', module)
     </Card>
   ))
   .add('Alert card', () => (
-    <AlertCard>
+    <AlertCard className="u-width-full">
       <div className="-size-md icon-info u-pull-left u-p-sm" />
       <div className="u-pull-left u-p-sm">Something went wrong!</div>
     </AlertCard>
