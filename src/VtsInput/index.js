@@ -9,7 +9,8 @@ class VtsInput extends Component {
   constructor() {
     super()
     this.state = {
-      focused: false
+      focused: false,
+      error: {}
     }
   }
 

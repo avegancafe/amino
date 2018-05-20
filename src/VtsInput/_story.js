@@ -20,7 +20,8 @@ storiesOf('VtsInput', module)
     <VtsInput
       onChange={noop}
       value={inputValue}
-      placeholder="Search for a property..."
+      placeholder={'Search for a property...'}
+      required={false}
     />
   ))
   .add('with an icon', () => (
