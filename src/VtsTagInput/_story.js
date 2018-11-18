@@ -7,6 +7,7 @@ import { withInfo } from '@storybook/addon-info'
 
 import VtsButton from '../VtsButton'
 import VtsTagInput from './'
+import { VtsTagInputWithHooks } from './tmp'
 
 class VtsTagInputWrapper extends Component {
   constructor(props) {
@@ -63,3 +64,4 @@ storiesOf('VtsTagInput', module)
       onRemove={props.onRemove}
     />
   ))
+  .add('with hooks', props => <VtsTagInputWithHooks {...props} />)

@@ -6,12 +6,12 @@
   "author": "Kyle Holzinger <kylelholzinger@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "react": "^16.3.2",
     "classnames": "^2.2.5",
     "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
+    "react": "^16.7.0-alpha.2",
     "react-contenteditable": "^2.0.7",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.7.0-alpha.2"
   },
   "devDependencies": {
     "@storybook/addon-backgrounds": "^3.4.5",
