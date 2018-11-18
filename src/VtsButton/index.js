@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import { result } from 'lodash'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 
 import './VtsButton.css'
 

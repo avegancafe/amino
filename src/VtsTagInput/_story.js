@@ -56,13 +56,10 @@ storiesOf('VtsTagInput', module)
       }}
     </VtsTagInputWrapper>
   ))
-  .add('basic', props => {
-    console.log(JSON.stringify(props))
-    return (
-      <VtsTagInput
-        tags={props.tags}
-        onSelect={props.onSelect}
-        onRemove={props.onRemove}
-      />
-    )
-  })
+  .add('basic', props => (
+    <VtsTagInput
+      tags={props.tags}
+      onSelect={props.onSelect}
+      onRemove={props.onRemove}
+    />
+  ))

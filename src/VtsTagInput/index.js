@@ -8,23 +8,21 @@ import * as KeyboardConstants from '../keyboardConstants'
 import at from 'lodash/at'
 import includes from 'lodash/includes'
 import ContentEditable from 'react-contenteditable'
-import noop from 'lodash/noop'
 
 class VtsTagInput extends Component {
   createTagKeys = at(KeyboardConstants, ['enter', 'tab', 'space', 'comma'])
 
-  constructor() {
-    super()
-    this.state = {
-      focused: false,
-      error: {},
-      dirty: false
-    }
+  state = {
+    focused: false,
+    error: {},
+    dirty: false
   }
 
   createTag() {
     if (this.refs.inputField.htmlEl.textContent) {
-      this._selectOption()
+      let tag = this.refs.inputField.htmlEl.textContent
+      this.refs.inputField.htmlEl.textContent = ''
+      this.props.onSelect(tag)
     }
   }
 
@@ -35,12 +33,6 @@ class VtsTagInput extends Component {
       }
       this.setState({ prepTagForRemoval: !this.state.prepTagForRemoval })
     }
-  }
-
-  _selectOption() {
-    let tag = this.refs.inputField.htmlEl.textContent
-    this.refs.inputField.htmlEl.textContent = ''
-    this.props.onSelect(tag)
   }
 
   preventDefaults(e) {
